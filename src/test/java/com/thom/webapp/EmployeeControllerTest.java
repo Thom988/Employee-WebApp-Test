@@ -16,15 +16,16 @@ import org.springframework.test.web.servlet.MockMvc;
 @SpringBootTest
 @AutoConfigureMockMvc
 public class EmployeeControllerTest {
-    
+
     @Autowired
     private MockMvc mockMvc;
-    
+
     @Test
     public void testGestEmployees() throws Exception {
-	
-	mockMvc.perform(get("/")).andDo(print()).andExpect(status().isOk()).andExpect(view().name("home")).andExpect(content().string(containsString("Laurent")));
-	
+
+	mockMvc.perform(get("/")).andDo(print()).andExpect(status().isOk()).andExpect(view().name("home"))
+		.andExpect(content().string(containsString("Laurent")));
+
     }
 
 }
